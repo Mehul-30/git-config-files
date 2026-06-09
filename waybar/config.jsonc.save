@@ -1,0 +1,47 @@
+// -*- mode: jsonc -*-
+
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 8,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock,"hyprland/workspaces"],
+    "modules-right": ["network", "network#speed", "battery"],
+
+   
+    "hyprland/workspaces": {
+        "format": "{name}",
+	"on-click": "activate",
+	"active-only": false
+    }	
+
+    "clock": {
+        "format": "  {:%I:%M %p   %d-%m-%Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    "network": {
+        "format-wifi": "   {essid}|{ipaddr}",
+        "format-ethernet": "  {ipaddr}|{cidr}",
+        "tooltip-format": "Interface: {ifname}\nGateway: {gwaddr}\nMAC: {mac}",
+        "format-disconnected": "󰖪  Offline"
+    },
+
+    "network#speed": {
+        "interval": 1,
+        "format": "⬇ {bandwidthDownBytes}   ⬆ {bandwidthUpBytes}",
+        "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

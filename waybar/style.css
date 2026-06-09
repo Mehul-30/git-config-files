@@ -1,0 +1,110 @@
+* {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Main bar */
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+/* Containers */
+.modules-left{
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+}
+.modules-right {
+    background: black;
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+}
+
+.modules-center{
+    background: grey;
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+}
+
+/* Base style for left modules */
+#custom-launcher{
+    background: black;
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+}
+
+#custom-launcher {
+    color: white
+}
+
+#custom-music {
+    background: black;
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+    color:  #d968cf;
+}
+ 
+/* Workspaces */
+#workspaces button {
+    padding: 1px 8px;
+    margin: 2px;
+    border-radius: 18px;
+    background:rgb(6, 5, 5);
+    color:white;
+}
+
+#workspaces button.active {
+    background: #8decf8;
+    color: black
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+#taskbar {
+    background: black;
+    border-radius: 18px;
+}
+
+#taskbar button {
+    background: transparent;
+    border-radius: 18px;
+}
+
+#taskbar button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Modules */
+#network,
+#battery,
+#custom-launcher,
+#custom-power,
+#tray {
+    padding: 0 6px;
+}
+
+/* Colors */
+#clock { 
+    background: black;
+    border-radius: 18px;
+    padding: 0px 10px;
+    margin: 2px;
+    color: #6e96e7;
+}
+#network { color: #89b4fa; }
+#battery { color: #f9e2af; }
+#custom-power { color: #ff5f5f; }
+
+tooltip {
+    padding: 2px 12px;   
+    font-size: 14px;    
+    border-radius: 18px;
+}

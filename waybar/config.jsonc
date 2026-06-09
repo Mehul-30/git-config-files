@@ -1,0 +1,83 @@
+{    
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 6,
+
+
+    "modules-left": ["custom/launcher", "clock","wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "pulseaudio", "custom/brightness","battery", "custom/power"],
+
+    "custom/launcher": {
+        "format": "   ",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "pulseaudio": {
+        "format": "  {volume}%",
+        "format-muted": "🔇",
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "custom/brightness": {
+        "exec": "brightnessctl | grep -oP '\\(\\K[0-9]+(?=%\\))'",
+        "interval": 1,
+        "format": "󰔎  {}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip": true,
+        "on-click": "activate",
+        "grouped": true,
+        "ignore-list": []
+    },
+
+    "custom/music": {
+        "exec": "~/.config/waybar/music.sh",
+        "interval": 2
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "active-only": false
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p} ",
+        "tooltip-format": "{:%A, %B %d, %Y}"
+    },
+
+    "network": {
+        "interval": 2,
+        "format-wifi": "   {essid}|{ipaddr}  {bandwidthDownBits}",
+        "format-ethernet": "   {ipaddr}  {bandwidthDownBits}",
+        "format-disconnected": "󱍢   Offline",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/scripts/powermenu.sh"
+    }
+}
